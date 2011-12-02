@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Main config vars
+SRC='lib'
+DOC='doc'
+
+mkdir -p $DOC
+for i in $SRC/*.h
+do
+	file=$(basename $i)
+	echo "Extracting doc from $i"
+	./tools/extract_doc.pl $i > $DOC/${file/.h/.html}
+done;
