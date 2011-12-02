@@ -1,0 +1,34 @@
+## Arboressence
+
+Autant que possible, il faudrait garder une arboressence ressemblant à :
+
+    .
+    ├── doc
+    │   ├── ...
+    │   ├── truc1.html
+    │   └── truc2.html
+    ├── lib
+    │   ├── ...
+    │   ├── truc1.c
+    │   ├── truc1.h
+    │   ├── truc2.c
+    │   └── truc2.h
+    ├── Makefile
+    ├── README.mkd
+    └── tools
+        ├── extract_doc.pl
+        └── make_doc
+
+Sachant que le dossier `doc` est généré par la commande expliquée dans __Documentation__ depuis les `*.h`.
+Les `*.c` et `*.h` sont tous dans `lib`. Le dossier `tools` est réservé aux outils annexes...
+
+## Documentation
+
+Vous pouvez générer la documentation complète en utilisant la commande suivante :
+
+	$ make doc
+
+Vous aurez besoin du module perl `Text::Markdown` pour que ça fonctionne.
+Pour le télécharger depuis _cpan_, lancez juste :
+
+    $ make doc_deps
