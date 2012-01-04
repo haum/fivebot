@@ -23,6 +23,12 @@ volatile unsigned long pulses_left;
 volatile unsigned long pulses_right;
 volatile int pulses_delta;
 
+void advance(unsigned char left, unsigned char right);
+void advance_balance(unsigned char left, unsigned char right);
+void init_balance(unsigned char left, unsigned char right);
+void init_balance(unsigned char left, unsigned char right);
+void pulses_balance();
+
 void pulses_init()
 {
     pulses_left = 0;

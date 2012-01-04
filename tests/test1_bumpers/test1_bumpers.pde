@@ -3,9 +3,9 @@
 // Test des bumpers
 // J. Lehuen 2011
 
-unsigned char BD = 8; // Bumper droit --> pin8
+unsigned char BD = 10; // Bumper droit --> pin8
 unsigned char BC = 9; // Bumper centre --> pin9
-unsigned char BG = 10; // Bumper gauche --> pin10
+unsigned char BG = 8; // Bumper gauche --> pin10
 
 void setup ()
 {
@@ -18,9 +18,9 @@ void setup ()
 
 void loop()
 {
-    boolean bumperG = !digitalRead(BG);
-    boolean bumperD = !digitalRead(BD);
-    boolean bumperC = !digitalRead(BC);
+    bool bumperG = !digitalRead(BG);
+    bool bumperD = !digitalRead(BD);
+    bool bumperC = !digitalRead(BC);
 
     Serial.print("gauche=");
     Serial.print(bumperG, DEC);

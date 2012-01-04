@@ -7,6 +7,8 @@ unsigned char IRG = 0; // Infrarouge gauche --> pin0
 unsigned char IRC = 1; // Infrarouge centre --> pin1
 unsigned char IRD = 2; // Infrarouge droit --> pin2
 
+int ir_distance(unsigned char ir);
+
 void setup ()
 {  
   Serial.begin(38400);
