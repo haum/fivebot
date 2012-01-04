@@ -1,0 +1,35 @@
+Naming Conventions
+==================
+
+Naming Functions
+----------------
+
+Functions are tidied into two abstraction layers.
+First one is an hardware abstraction : the __Intermediate Layer__ (IL).
+Second is an abstraction's abstraction : this is the __Final Layer__ (FL), which is the one accessible to final users.
+
+### Naming in IL
+
+Functions are named using this format :
+
+    _name_of_function();
+
+The first underscore is __mandatory__.
+
+### Naming in FL
+
+Functions are named using the following format :
+
+    BOT_MyAwesomeFunction();
+
+Here again, the first word ("BOT") followed by an underscore is __mandatory__.
+
+Naming Definitions
+------------------
+
+All constants instanciated by a `#define` instruction must be written in capital letters and start with `BOT_`.
+
+Example :
+
+    #define BOT_MY_CONSTANT 42;
+
