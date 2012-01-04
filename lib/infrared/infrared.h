@@ -1,0 +1,6 @@
+#ifndef INFRARED_H_INCLUDED
+#define INFRARED_H_INCLUDED
+
+
+
+#endif // INFRARED_H_INCLUDED
