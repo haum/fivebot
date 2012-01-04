@@ -1,0 +1,43 @@
+Header Of File
+==============
+
+Files are divided in 2 types :
+
+- tests/programs
+- lib
+
+Header depends of file type.
+
+Tests/Programs
+--------------
+
+Here is this recommended header :
+
+    /*
+     * project : fivebot
+     * author : yourName
+     * license : wtfpl
+     * date : 01/01/1970 (actual date)
+     * version : 1.0
+     * goal :
+     * the robot advance and react to bumpers.
+     * when a bumper is hit, robot stops.
+     *
+     */
+
+Lib
+---
+
+Here is this recommended header :
+
+    /*
+     * project : fivebot
+     * author : yourName
+     * license : wtfpl
+     * date : 01/01/1970 (actual date)
+     * version : 1.0
+     * category : CATEGORY
+     *
+     */
+
+CATEGORY is a part of the bot. For example `bumpers`
