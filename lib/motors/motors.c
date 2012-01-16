@@ -46,12 +46,15 @@ void _initmotors(){
     attachInterrupt(0, _pulses_right_balance, RISING);// si interruption sur pin 0, (valeur montante(RISING)), appeler la fonction _pulses_right_balance()
 }
 
+
 // initialisation à zéro des pulsations des moteurs
 void _pulses_init(){
     BOT_IL_pulses_left = 0;
     BOT_IL_pulses_right = 0;
 }
 
+
+// initialisation des vitesses des moteurs, ainsi que des pulses (protégés des interruptions)
 void _init_balance(unsigned char left, unsigned char right){
     BOT_IL_speed_left = left;
     BOT_IL_speed_right = right;
