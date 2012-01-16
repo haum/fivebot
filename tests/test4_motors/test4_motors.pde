@@ -1,11 +1,11 @@
-
 // Robot FB-004
 // Synchronisation des moteurs
-// J. Lehuen 2011
+// Thomas Lechat 2012
 
 #define MINSPEED 0
 #define MAXSPEED 100
 #define SPEED    50
+#define Kp 10
 
 #define UNKNOWN 0
 #define ADVANCE 1
@@ -49,10 +49,19 @@ void pulses_right_balance()
 
 void pulses_balance()
 {
-    pulses_delta = speed_right + pulses_right - pulses_left;
-    if (pulses_delta <= MINSPEED) speed_left = MINSPEED;
-    else if (pulses_delta >= MAXSPEED) speed_left = MAXSPEED;
-    else speed_left = pulses_delta;
+    pulses_delta = pulses_right - pulses_left;
+
+    if (pulses_delta < 0){ speed_left = speed_left + pulses_delta * Kp; speed_right - pulses_delta * Kp; }
+    else if (pulses_delta > 0){ speed_right = speed_right + pulses_delta * Kp; speed_left= speed_left - pulses_delta * Kp; }
+    
+    if( speed_right > MAXSPEED){speed_right = MAXSPEED;}
+    if( speed_left > MAXSPEED){speed_left = MAXSPEED;}
+
+    
+    if( speed_right < MINSPEED){speed_right = MINSPEED;}
+    if( speed_left < MINSPEED){speed_left = MINSPEED;}
+    
+    
     advance(speed_left, speed_right);
 }
 
@@ -95,7 +104,5 @@ void setup()
 void loop()
 {
     advance_balance(SPEED, SPEED);
-    delay(100);
 }
-
 
