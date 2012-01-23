@@ -13,19 +13,25 @@
 
 // This pins are freely modifiable arccording to your
 // mapping on the bot.
-#define BOT_RIGHTBUMPER 10; // Bumper right --> pin8
-#define BOT_MIDDLEBUMPER 9; // Bumper middle --> pin9
-#define BOT_LEFTBUMPER 8; // Bumper left --> pin10
+#define BOT_RIGHTBUMPER 10 // Bumper right --> pin8
+#define BOT_MIDDLEBUMPER 9 // Bumper middle --> pin9
+#define BOT_LEFTBUMPER 8 // Bumper left --> pin10
 
 // This macro returns true if a bumpers has been hit. False else.
-#define BOT_getBumperState(bumper_pin) (!digitalRead(bumper_pin))
+#define getBumperState(bumper_pin) (!digitalRead(bumper_pin))
 
 // True if something hit one of the bumpers
-#define BOT_getCollision (BOT_getBumperState(BOT_LEFTBUMPER) || BOT_getBumperState(BOT_MIDDLEBUMPER) || BOT_getBumperState(BOT_RIGHTBUMPER))
+#define getCollision (BOT_getBumperState(BOT_LEFTBUMPER) || BOT_getBumperState(BOT_MIDDLEBUMPER) || BOT_getBumperState(BOT_RIGHTBUMPER))
 
 // This initialize bumpers.
 // Just remind to add that in your setup().
 // The only thing it does is pinMode each bumper pin as INPUT
 void _init_bumpers();
+
+void _init_bumpers() {
+    pinMode(BOT_LEFTBUMPER, INPUT);
+    pinMode(BOT_MIDDLEBUMPER, INPUT);
+    pinMode(BOT_MIDDLEBUMPER, INPUT);
+}
 
 #endif
