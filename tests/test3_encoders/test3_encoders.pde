@@ -21,27 +21,18 @@ void setup()
    
   attachInterrupt(INT1, interrupt, RISING);
 
-  analogWrite(PMG, 25);
+  analogWrite(PMG, 15);
   digitalWrite(SMG, HIGH);
 }
 
 void loop()
 {
-
-  rpm = 120/(millis() - oldTime)*rpmcount;
-  oldTime = millis();
-  rpmcount=0;
-  
-  Serial.print ("pos = ");
-  Serial.print (encoderpos, DEC);
-  Serial.print ("   rpm = ");
-  Serial.println(rpm, DEC);
+  Serial.println(encoderpos, DEC);
 }
 
 void interrupt()
 {
   encoderpos++;
-  rpmcount++;
 }
 
 
