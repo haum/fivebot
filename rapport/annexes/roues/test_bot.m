@@ -1,15 +1,25 @@
 clear all;
 close all;
 
+% Récupération des données
 raw = load("test_bot.data")
 vitesses = raw(:,1);
-delta = 0.1*ones(1,length(vitesses));
 temps = raw(:,2);
 
-xlabel("Vitesse");
-ylabel("Temps/tour");
+% Incertitude de 10%
+delta = 0.2*temps;
 
-title("Graphe du temps/tour en fonction de la vitesse commandée");
-
+% Tracé
 errorbar(vitesses, temps, delta);
 
+% Rendre la courbe bien visible (décalage sur les axes)
+xlim([0 110]);
+ylim([0 6]);
+
+% grille
+grid on;
+
+% annotations
+xlabel("Vitesse");
+ylabel("Temps/tour");
+title("Graphe du temps/tour en fonction de la vitesse commandee");
