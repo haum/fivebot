@@ -2,7 +2,7 @@
 #define INFRARED_H_INCLUDED
 
 // Constants for processing
-#define BOT_N_MOYENNE    // Number of tests over IR
+#define N_AVERAGE    // Number of tests over IR
 #define BOT_TIME_BETWEEN // Time between 2 tests
 
 // Constants for IR sensors
@@ -18,11 +18,11 @@ int BOT_getDistance(int sensor) {
 float BOT_getDistAverage(int sensor){
     int i;
     float sum = 0;
-    for (i = 0; i < N_MOYENNE; i++) {
+    for (i = 0; i < N_AVERAGE; i++) {
         sum += getDistance(sensor);
         delay(TIME_BETWEEN);
     }
-    return sum/N_MOYENNE;
+    return sum/N_AVERAGE;
 }
 
 #endif // INFRARED_H_INCLUDED
