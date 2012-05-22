@@ -1,1 +1,6 @@
 tests/*/tmp/*
+*.aux
+*.log
+*.out
+*.toc
+	
